@@ -1,0 +1,14 @@
+
+.noReviews {
+    margin: 64px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    margin: 64px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

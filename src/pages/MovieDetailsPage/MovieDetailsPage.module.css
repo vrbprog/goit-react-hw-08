@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+    margin: 24px;
+}
+
+.img {
+    margin-right: 28px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.genres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.info {
+    margin: 12px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.errorLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: red;
+}
+
+.addInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.addList {
+    display: flex;
+    gap: 32px;
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.active {
+    text-decoration: underline;
+    color: #605df5;
+    text-decoration-color: #605df5;
+    text-decoration-thickness: 2px;
+}
+
+.button {
+    background-color: #ffffff;
+    width: 122px;
+    border: none;
+    border-radius: 8px;
+    color: rgb(44, 22, 245);
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 24px 0px 0px 24px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5296f0;
+    color: white;
+}
