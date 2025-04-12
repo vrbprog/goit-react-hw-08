@@ -1,18 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
-// import MoviesPage from "../pages/MoviesPage/MoviesPage";
 import Navigation from "./Navigation/Navigation";
-// import MovieDetailsPage from "../pages/MovieDetailsPage/MovieDetailsPage";
-// import MovieCast from "../components/MovieCast/MovieCast";
-// import MovieReviews from "../components/MovieReviews/MovieReviews";
-// import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import { lazy, Suspense } from "react";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RegistrationPage from "../pages/RegistrationPage/RegistrationPage";
+import ContactsPage from "../pages/ContactsPage/ContactsPage";
+import RestrictedRoute from "../components/RestrictedRoute";
+import PrivateRoute from "../components/PrivateRoute";
+import { Suspense } from "react";
 
-const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage"));
-const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage/MovieDetailsPage"));
-const MovieCast = lazy(() => import("../components/MovieCast/MovieCast"));
-const MovieReviews = lazy(() => import("../components/MovieReviews/MovieReviews"));
-const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
 
 export default function App() {
     return (
@@ -21,15 +16,14 @@ export default function App() {
             <Suspense fallback={<h1>Loading...</h1>}>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route
-                        path="/movies/:moviesId"
-                        element={<MovieDetailsPage />}
-                    >
-                        <Route path="cast" element={<MovieCast />} />
-                        <Route path="reviews" element={<MovieReviews />} />
-                    </Route>
-                    <Route path="/movies" element={<MoviesPage />} />
-                    <Route path="*" element={<NotFoundPage />} />
+                    {/* <Route path="/login" element={<LoginPage />} /> */}
+                    <Route path="/login" element={
+                        <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
+                    }/>
+                    <Route path="/registartion" element={<RegistrationPage />} />
+                    <Route path="/contacts" element={
+                        <PrivateRoute component={<ContactsPage />} redirectTo="/" />
+                    }/>
                 </Routes>
             </Suspense>
         </div>

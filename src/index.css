@@ -105,3 +105,111 @@ main {
     flex-direction: column;
     width: 100dvw;
 }
+
+.container {
+    background: #ffffff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin {
+    width: 500px;
+    min-height: 450px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #001324dc;
+}
+
+.signin_wrapper {
+    background: #0087ffde;
+}
+
+.signin_success {
+    background: #005baa;
+}
+.signin_success h1 {
+    letter-spacing: 1px;
+}
+.signin_success p {
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+form {
+    padding: 20px 50px;
+}
+
+h2 {
+    text-align: center;
+    /* font-family: "Righteous", cursive; */
+    font-size: 54px;
+    font-weight: 600;
+    margin: 16px;
+    color: #21035a;
+}
+
+div.textField {
+    width: 100%;
+    margin: 12px 10px;
+}
+
+div.textField input {
+    font-size: 20px;
+}
+div.textField svg {
+    font-size: 25px;
+}
+
+button {
+    background: #001324dc;
+    width: 100%;
+    line-height: 35px;
+    margin: 20px 9px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.error_msg {
+    color: #ff0000e0;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+span.signup {
+    color: #ffffffde;
+    cursor: pointer;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.MaterialForm {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 93vh;
+    background-color: rgb(15, 87, 130);
+}
+
+.MaterialForm > form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 32px;
+    min-width: 350px;
+    border-radius: 8px;
+    margin: 32px;
+}
