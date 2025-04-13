@@ -1,0 +1,21 @@
+.formWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 64px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
