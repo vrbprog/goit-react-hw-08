@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { refreshUser } from "../redux/auth/operations";
 import { selectIsRefreshing } from "../redux/auth/selectors";
 import { lazy } from "react";
+import Layout from "./Layout/Layout";
+import RefreshingUser from "./RefreshingUser/RefreshingUser";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -26,11 +28,23 @@ export default function App() {
     }, [dispatch]);
 
     return isRefreshing ? (
-        <strong>Getting user data please wait...</strong>
+        <RefreshingUser />
     ) : (
-        <div>
-            <AppBar />
-            <Suspense fallback={null}>
+        <Layout>
+            <Suspense
+                fallback={
+                    <p
+                        style={{
+                            backgroundColor: "rgb(15, 87, 130)",
+                            height: "93vh",
+                            textAlign: "center",
+                            fontSize: "30px",
+                        }}
+                    >
+                        Loading...
+                    </p>
+                }
+            >
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route
@@ -58,6 +72,6 @@ export default function App() {
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </Suspense>
-        </div>
+        </Layout>
     );
 }
