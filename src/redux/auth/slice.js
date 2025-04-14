@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { logout, login, register, refreshUser } from "./operations.jsx";
+import { logout, login, register, refreshUser } from "./operations.js";
 import { toast } from "react-hot-toast";
 
 const authSlice = createSlice({
