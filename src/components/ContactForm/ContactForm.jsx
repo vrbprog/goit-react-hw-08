@@ -20,9 +20,6 @@ const ContactFormMU = () => {
         if (event.target.checked) {
             dispatch(changeFilter(""));
         }
-        // else {
-        //     dispatch(changeFilter(""));
-        // }
     };
 
     const dispatch = useDispatch();
@@ -127,9 +124,7 @@ const ContactFormMU = () => {
                                     color="primary"
                                     label="Filter"
                                     fullWidth
-                                    onChange={
-                                        (e) => handleFilter(e)
-                                    }
+                                    onChange={(e) => handleFilter(e)}
                                 />
                                 <Box height={150} />
                             </>
