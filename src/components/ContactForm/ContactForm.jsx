@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import { TextField, Button, Box, Switch, Typography } from "@mui/material";
+import { TextField, Button, Box, Switch } from "@mui/material";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
-import { login } from "../../redux/auth/operations";
 import s from "./ContactForm.module.css";
 import { useState } from "react";
 import css from "./ContactForm.module.css";
 import { addContact } from "../../redux/contacts/operations";
+import { changeFilter } from "../../redux/filters/selectors";
 
 const initalValues = {
     name: "",
@@ -15,12 +15,20 @@ const initalValues = {
 
 const ContactFormMU = () => {
     const [check, setCheck] = useState(true);
-
     const handleChange = (event) => {
         setCheck(event.target.checked);
+        if (event.target.checked) {
+            dispatch(changeFilter(""));
+        }
+        // else {
+        //     dispatch(changeFilter(""));
+        // }
     };
 
     const dispatch = useDispatch();
+    const handleFilter = (event) => {
+        dispatch(changeFilter(event.target.value));
+    };
 
     return (
         <div className={s.formWrapper}>
@@ -55,7 +63,7 @@ const ContactFormMU = () => {
                             <Switch
                                 checked={check}
                                 onChange={handleChange}
-                                inputProps={{ "aria-label": "controlled" }}
+                                // inputProps={{ "aria-label": "controlled" }}
                             />
                             <h4 className={!check ? css.disabled : undefined}>
                                 New contact
@@ -119,9 +127,9 @@ const ContactFormMU = () => {
                                     color="primary"
                                     label="Filter"
                                     fullWidth
-                                    onChange={(e) => {
-                                        //console.log(e.target.value);
-                                    }}
+                                    onChange={
+                                        (e) => handleFilter(e)
+                                    }
                                 />
                                 <Box height={150} />
                             </>
